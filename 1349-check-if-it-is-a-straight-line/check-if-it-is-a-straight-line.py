@@ -7,4 +7,5 @@ class Solution:
             if (y2-y1) * (x-x1) != (x2-x1) * (y-y1):
                 return False
         return True
+
         
