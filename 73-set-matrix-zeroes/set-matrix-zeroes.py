@@ -11,15 +11,11 @@ class Solution:
                 if matrix[i][j] == 0:
                     row.add(i)
                     column.add(j)
-
         for i in row:
             for j in range(len(matrix[0])):
                 matrix[i][j] = 0
-
+        
         for i in column:
             for j in range(len(matrix)):
                 matrix[j][i] = 0
-        
-
-                
         
