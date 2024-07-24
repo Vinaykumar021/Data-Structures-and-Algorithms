@@ -4,8 +4,7 @@ class Solution:
             s = str(x)
             r = 0
             for c in s:
-                r = r * 10
-                r += mapping[int(c)]
+                r = r*10 + mapping[int(c)]
             return r
 
         nums.sort(key = f)
