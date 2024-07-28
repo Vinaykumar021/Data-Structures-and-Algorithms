@@ -1,7 +1,7 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        defdict = defaultdict(int)
+        defDict = defaultdict(int)
         for num in nums:
-            defdict[num] += 1
-        return sorted(defdict, key = defdict.get, reverse = True)[:k] 
+            defDict[num] += 1
+        return sorted(defDict, key = defDict.get, reverse = True)[:k]
         
