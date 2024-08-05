@@ -6,5 +6,5 @@ class Solution:
                 k -= 1
                 if k == 0:
                     return i
-        return ""
+        return "" 
         
