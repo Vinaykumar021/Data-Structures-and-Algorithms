@@ -1,6 +1,6 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        map = {"]" : "[", "}" : "{", ")" : "("}
+        map = {"]" : "[", ")" : "(", "}" : "{"}
         stack = []
 
         for c in s:
@@ -11,10 +11,6 @@ class Solution:
                     return False
             else:
                 stack.append(c)
-        return not stack
                 
-
-            
-            
-            
+        return not stack
         
