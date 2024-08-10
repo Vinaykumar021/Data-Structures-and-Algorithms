@@ -4,12 +4,17 @@ class Solution:
         stack = []
 
         for c in s:
-            if c not in map:
+            if c in map:
+                if stack and stack[-1] == map[c]:
+                    stack.pop()
+                else:
+                    return False
+            else:
                 stack.append(c)
-                continue
-            elif not stack or map[c] != stack[-1]:
-                return False
-            stack.pop()
-
         return not stack
+                
+
+            
+            
+            
         
