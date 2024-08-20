@@ -6,5 +6,6 @@ class Solution:
             if price < lowest:
                 lowest = price
             res = max(res, price - lowest)
-        return res  
+        return res
+
         
