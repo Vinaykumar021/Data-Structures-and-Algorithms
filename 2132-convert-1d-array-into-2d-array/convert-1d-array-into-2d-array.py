@@ -3,7 +3,8 @@ class Solution:
         if len(original) != m * n:
             return []
         res = []
-        for i in range(0, len(original), n):
-            res.append(original[i:i+n])
+        for r in range(m):
+            start = r * n
+            end = start + n
+            res.append(original[start : end])
         return res
-        
