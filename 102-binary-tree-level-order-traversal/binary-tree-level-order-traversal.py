@@ -19,8 +19,6 @@ class Solution:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
-            res.append(level)
+            if level:
+                res.append(level)
         return res
-            
-
-        
