@@ -9,7 +9,7 @@ class Solution:
         stack = []
         cur = root
 
-        while stack or cur:
+        while cur or stack:
             while cur:
                 stack.append(cur)
                 cur = cur.left
@@ -18,3 +18,4 @@ class Solution:
             if k == 0:
                 return cur.val
             cur = cur.right
+
