@@ -4,8 +4,8 @@ class Solution:
         for x, y in points:
             dist = (x ** 2) + (y ** 2)
             minheap.append([dist, x, y])
-        res = []
         heapq.heapify(minheap)
+        res = []
         while k > 0:
             dist, x, y = heapq.heappop(minheap)
             res.append([x, y])
