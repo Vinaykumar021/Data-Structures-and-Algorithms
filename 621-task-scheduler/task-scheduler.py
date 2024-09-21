@@ -17,5 +17,3 @@ class Solution:
             if q and q[0][1] == t:
                 heapq.heappush(maxHeap, q.popleft()[0])
         return t
-
-
