@@ -4,17 +4,12 @@ class Solution:
         subset = []
         def dfs(i):
             if i >= len(nums):
-                res.append(subset.copy())
-                return
-
-            #if element is included
+                return res.append(subset.copy())
+            
             subset.append(nums[i])
             dfs(i + 1)
 
-            #if element is not included
             subset.pop()
             dfs(i + 1)
         dfs(0)
         return res
-
-
