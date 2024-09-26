@@ -4,9 +4,8 @@ class Solution:
         candidates.sort()
 
         def dfs(i, cur, total):
-            if target == total:
-                res.append(cur.copy())
-                return
+            if total == target:
+                return res.append(cur.copy())
             if total > target or i >= len(candidates):
                 return
             
@@ -15,7 +14,7 @@ class Solution:
             cur.pop()
 
             while i+1 < len(candidates) and candidates[i] == candidates[i+1]:
-                i += 1
+                 i += 1
             dfs(i+1, cur, total)
-        dfs(0, [], 0)
-        return res
+        dfs(0,[], 0)
+        return res 
