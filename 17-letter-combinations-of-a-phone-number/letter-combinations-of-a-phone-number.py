@@ -20,7 +20,4 @@ class Solution:
                 backtrack(i+1, curStr + c)
         if digits:
             backtrack(0, "")
-
         return res
-
-            
