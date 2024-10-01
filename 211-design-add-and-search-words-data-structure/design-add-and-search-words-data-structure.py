@@ -7,6 +7,7 @@ class WordDictionary:
 
     def __init__(self):
         self.root = TrieNode()
+        
 
     def addWord(self, word: str) -> None:
         cur = self.root
@@ -22,7 +23,7 @@ class WordDictionary:
             for i in range(j, len(word)):
                 c = word[i]
                 if c == ".":
-                    for child in cur.children.values():
+                    for child in cur.children.values(): #values inside dictionary i.e TrieNodes
                         if dfs(i + 1, child):
                             return True
                     return False
@@ -32,6 +33,9 @@ class WordDictionary:
                     cur = cur.children[c]
             return cur.end
         return dfs(0, self.root)
+
+                        
+
 
         
 
