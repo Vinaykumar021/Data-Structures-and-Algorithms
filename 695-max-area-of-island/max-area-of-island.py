@@ -5,6 +5,7 @@ class Solution:
         rows, cols = len(grid), len(grid[0])
         visit = set()
         area = 0
+        directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
 
         def dfs(r, c):
             if (r not in range(rows)
@@ -14,7 +15,12 @@ class Solution:
             ):
                 return 0
             visit.add((r, c))
-            return 1 + dfs(r, c + 1) + dfs(r, c - 1) + dfs(r + 1, c) + dfs(r - 1, c)
+            sum = 1
+            for dr, dc in directions:
+                sum += dfs(r + dr, c + dc)
+            return sum
+
+            
         
 
         for r in range(rows):
