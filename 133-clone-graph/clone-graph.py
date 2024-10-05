@@ -11,7 +11,6 @@ class Solution:
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
         oldToNew = {}
         def dfs(node):
-       
             if node in oldToNew:
                 return oldToNew[node]
             copy = Node(node.val)
@@ -20,3 +19,4 @@ class Solution:
                 copy.neighbors.append(dfs(nei))
             return copy
         return dfs(node) if node else None
+
