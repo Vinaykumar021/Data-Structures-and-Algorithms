@@ -15,9 +15,9 @@ class Solution:
         def dfs(node):
             if node in oldToNew:
                 return oldToNew[node]
-            copy = Node(node.val)
-            oldToNew[node] = copy
+            clone = Node(node.val)
+            oldToNew[node] = clone
             for nei in node.neighbors:
-                copy.neighbors.append(dfs(nei))
-            return copy
+                clone.neighbors.append(dfs(nei))
+            return clone
         return dfs(node)
