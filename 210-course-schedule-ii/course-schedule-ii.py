@@ -5,6 +5,7 @@ class Solution:
             premap[crs].append(pre)
         visit, cycle = set(), set()
         output = []
+
         def dfs(crs):
             if crs in cycle:
                 return False
