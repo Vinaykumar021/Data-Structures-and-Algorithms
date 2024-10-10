@@ -1,9 +1,11 @@
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        premap = {i : [] for i in range(numCourses)}
+        premap = {c : [] for c in range(numCourses)}
+
         for crs, pre in prerequisites:
             premap[crs].append(pre)
-        visit, cycle = set(), set()
+
+        cycle, visit = set(), set()
         output = []
 
         def dfs(crs):
