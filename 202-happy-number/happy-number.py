@@ -1,7 +1,6 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
         visit = set()
-
         while n not in visit:
             visit.add(n)
             n = self.sumOfSquares(n)
@@ -16,4 +15,3 @@ class Solution:
             output += digit
             n = n // 10
         return output
-
