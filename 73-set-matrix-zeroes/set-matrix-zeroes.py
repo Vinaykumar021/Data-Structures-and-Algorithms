@@ -3,24 +3,16 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        rows, cols = len(matrix), len(matrix[0])
-        rowZero = False
+        row, col = set(), set()
 
-        for i in range(rows):
-            for j in range(cols):
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
                 if matrix[i][j] == 0:
-                    matrix[0][j] = 0
-                    if i > 0:
-                        matrix[i][0] = 0
-                    else:
-                        rowZero = True
-        for i in range(1, rows):
-            for j in range(1, cols):
-                if matrix[i][0] == 0  or matrix[0][j] == 0:
-                    matrix[i][j] = 0
-        if matrix[0][0] == 0:
-            for i in range(rows):
-                matrix[i][0] = 0
-        if rowZero:
-            for c in range(cols):
-                matrix[0][c] = 0
+                    row.add(i)
+                    col.add(j)
+        for r in row:
+            for c in range(len(matrix[0])):
+                matrix[r][c] = 0
+        for c in col:
+            for r in range(len(matrix)):
+                matrix[r][c] = 0
