@@ -4,18 +4,16 @@ class Solution:
         Do not return anything, modify matrix in-place instead.
         """
         row = set()
-        column = set()
+        col = set()
 
         for i in range(len(matrix)):
             for j in range(len(matrix[0])):
                 if matrix[i][j] == 0:
                     row.add(i)
-                    column.add(j)
+                    col.add(j)
         for i in row:
             for j in range(len(matrix[0])):
                 matrix[i][j] = 0
-        
-        for i in column:
+        for i in col:
             for j in range(len(matrix)):
                 matrix[j][i] = 0
-        
