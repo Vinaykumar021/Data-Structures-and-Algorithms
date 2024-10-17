@@ -6,26 +6,21 @@ class Solution:
         rows, cols = len(matrix), len(matrix[0])
         rowZero = False
 
-        for i in range(rows):
-            for j in range(cols):
-                if matrix[i][j] == 0:
-                    matrix[0][j] = 0
-                    if i > 0:
-                        matrix[i][0] = 0
+        for r in range(rows):
+            for c in range(cols):
+                if matrix[r][c] == 0:
+                    matrix[0][c] = 0
+                    if r > 0:
+                        matrix[r][0] = 0
                     else:
                         rowZero = True
-        for i in range(1, rows):
-            for j in range(1, cols):
-                if matrix[i][0] == 0 or matrix[0][j] == 0:
-                    matrix[i][j] = 0
+        for r in range(1,rows):
+            for c in range(1,cols):
+                if matrix[0][c] == 0 or matrix[r][0] == 0:
+                    matrix[r][c] = 0
         if matrix[0][0] == 0:
-            for i in range(rows):
-                matrix[i][0] = 0
+            for r in range(rows):
+                matrix[r][0] = 0
         if rowZero:
-            for j in range(cols):
-                matrix[0][j] = 0
-        
-
-
-
-
+            for c in range(cols):
+                matrix[0][c] = 0
