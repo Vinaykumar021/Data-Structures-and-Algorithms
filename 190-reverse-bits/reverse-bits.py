@@ -5,3 +5,4 @@ class Solution:
             bit = (n >> i) & 1
             res += (bit << (31 - i))
         return res
+        
