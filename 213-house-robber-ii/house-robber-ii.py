@@ -1,6 +1,6 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        return max(nums[0], self.helper(nums[1:]), self.helper(nums[:-1]))
+        return max(nums[0], self.helper(nums[1:len(nums)]), self.helper(nums[:-1]))
 
 
     def helper(self, nums):
