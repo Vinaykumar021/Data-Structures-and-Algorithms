@@ -4,9 +4,6 @@ class Solution:
         curMax, curMin = 1, 1
 
         for n in nums:
-            if n == 0:
-                curMax, curMin = 1, 1
-                continue
             temp = n * curMax
             curMax = max(curMax * n, curMin * n, n)
             curMin = min(temp, curMin * n, n)
