@@ -1,6 +1,6 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        dp = {}     #key = (i, buying), val = maxprofit
+        dp = {}     #key = (i, buying), value = maxprofit
 
         def dfs(i, buying):
             if i >= len(prices):
@@ -12,7 +12,7 @@ class Solution:
                 cooldown = dfs(i + 1, buying)
                 dp[(i, buying)] = max(buy, cooldown)
             else:
-                sell = dfs(i + 2, not buying) + prices[i]
+                sell = dfs(i + 2, not buying) +  prices[i]
                 cooldown = dfs(i + 1, buying)
                 dp[(i, buying)] = max(sell, cooldown)
             return dp[(i, buying)]
