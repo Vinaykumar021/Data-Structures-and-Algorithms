@@ -7,5 +7,5 @@ class Solution:
             if cur < 0:
                 cur = 0
             cur += n
-            maxSub = max(maxSub, cur)
-        return maxSub 
+            maxSub = max(cur, maxSub)
+        return maxSub
