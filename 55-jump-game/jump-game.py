@@ -1,10 +1,10 @@
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
         gas = 0
-        for n in nums:
+        for num in nums:
             if gas < 0:
                 return False
-            if n > gas:
-                gas = n
+            if num > gas:
+                gas = num
             gas -= 1
         return True
