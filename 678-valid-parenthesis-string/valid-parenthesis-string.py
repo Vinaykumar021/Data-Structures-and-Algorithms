@@ -1,14 +1,13 @@
 class Solution:
     def checkValidString(self, s: str) -> bool:
-        leftMax, leftMin = 0, 0
-
+        leftMin, leftMax = 0, 0
         for c in s:
             if c == '(':
-                leftMax, leftMin = leftMax + 1, leftMin + 1
+                leftMin, leftMax = leftMin + 1, leftMax + 1
             elif c == ')':
-                leftMax, leftMin = leftMax - 1, leftMin - 1
+                leftMin, leftMax = leftMin - 1, leftMax - 1
             else:
-                leftMax, leftMin = leftMax + 1, leftMin - 1
+                leftMin, leftMax = leftMin - 1, leftMax + 1
             if leftMax < 0:
                 return False
             if leftMin < 0:
