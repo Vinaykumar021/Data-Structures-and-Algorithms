@@ -5,6 +5,3 @@ class Solution:
             if i.isalnum():
                 string += i.lower()
         return string == string[::-1]
-
-
-        
