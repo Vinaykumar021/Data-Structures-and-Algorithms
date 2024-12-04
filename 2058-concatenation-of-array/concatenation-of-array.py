@@ -1,10 +1,7 @@
 class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        res = [0] * (2 * n)
-        for i in range(n):
+        res = [0] * (2 * len(nums))
+        for i in range(len(nums)):
             res[i] = nums[i]
-            res[i+n] = nums[i]
+            res[i + len(nums)] = nums[i]
         return res
-
-
