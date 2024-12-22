@@ -1,8 +1,8 @@
 class Solution:
     def maxNumberOfBalloons(self, text: str) -> int:
-        n = Counter(text)
-        balloon = Counter("balloon")
+        c = Counter(text)
+        b = Counter("balloon")
         res = len(text)
-        for c in balloon:
-            res = min(res, n[c] // balloon[c])
+        for i in b:
+            res = min(res, c[i] // b[i])
         return res
