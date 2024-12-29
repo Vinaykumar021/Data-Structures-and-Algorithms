@@ -1,11 +1,23 @@
 class Solution:
     def minimumOperations(self, grid: List[List[int]]) -> int:
-        cols = [list(col) for col in zip(*grid)]
+        newGrid = [list(cols) for cols in zip(*grid)] 
         res = 0
-        for i in range(len(cols)):
-            for j in range(1, len(cols[0])):
-                if cols[i][j] <= cols[i][j-1]:
-                    val = cols[i][j-1] - cols[i][j] + 1
+        for i in range(len(newGrid)):
+            for j in range(1, len(newGrid[0])):
+                if newGrid[i][j] <= newGrid[i][j-1]:
+                    val = newGrid[i][j-1] - newGrid[i][j] + 1
                     res += val
-                    cols[i][j] += val
+                    newGrid[i][j] += val
         return res
+
+'''  
+1.cols = [list(col) for col in zip(*grid)]
+Output: Produces a list of lists.
+Mutability: Each column is mutable (can be changed).
+Use Case: If you need to modify the columns (e.g., increment elements) during your algorithm.
+2. cols = list(zip(*grid))
+Output: Produces a list of tuples.
+Mutability: Each column is immutable (cannot be changed).
+Use Case: If you only need to read/access the columns without modifying them.
+
+'''
