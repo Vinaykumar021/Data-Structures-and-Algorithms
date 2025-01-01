@@ -1,9 +1,13 @@
 class Solution:
     def findTheWinner(self, n: int, k: int) -> int:
-        def helper(n, k):
-            if n == 0:
-                return 0
+        q = deque()
+        for i in range(1, n + 1):
+            q.append(i)
 
-            return (helper(n - 1, k) + k) % n
-            
-        return helper(n, k) + 1
+        while len(q) > 1:
+            for i in range(k - 1):
+                num = q.popleft()
+                q.append(num)
+            q.popleft()
+
+        return q[0]
