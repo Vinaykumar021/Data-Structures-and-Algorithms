@@ -9,4 +9,3 @@ class Solution:
             if num not in n1:
                 res2.append(num)
         return [res1, res2]
-        
